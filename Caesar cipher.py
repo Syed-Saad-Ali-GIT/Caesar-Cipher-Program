@@ -12,12 +12,12 @@ def encode():
 
     while(incorrectInput):
         textToEncode = input("What will you like to encode \n")
-        if(textToDecode.isalpha):
+        if(textToEncode.isalpha()):
             incorrectInput=False
         else:
-            print("Enter Only Alphabets , no numbers or special characters")
+            print("Enter Only Alphabets , no numbers or special characters \n")
 
-            
+
     incorrectInput = True       
     while(incorrectInput):
         try:
@@ -27,12 +27,17 @@ def encode():
             
             else:
                 print("Nice Still in Dev... key :" + keyShift + "\n")
-                print(textToEncode)
-                textToDecode
+                print(textToEncode +"\n")
                 incorrectInput = False
         except:
             print("Something Went Wrong :( \n")
 
+    for x in textToEncode:
+        if(ord(x)+int(keyShift) > ord("z")):
+            keyShift = int(keyShift) -(ord("z")-ord(x)+1)
+            x = "a"
+        print(chr(ord(x)+int(keyShift)))
+        
 
 def decode(): 
     print("Decoding")
