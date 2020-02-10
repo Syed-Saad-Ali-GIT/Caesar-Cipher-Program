@@ -32,12 +32,17 @@ def encode():
         except:
             print("Something Went Wrong :( \n")
 
+    currentLetter = 0
     for x in textToEncode:
         if(ord(x)+int(keyShift) > ord("z")):
             keyShift = int(keyShift) -(ord("z")-ord(x)+1)
             x = "a"
-        print(chr(ord(x)+int(keyShift)))
+
         
+        textToEncode = textToEncode[:currentLetter] + (chr(ord(x)+int(keyShift))) + textToEncode[currentLetter+1:]
+        currentLetter +=1
+        
+    print(textToEncode)
 
 def decode(): 
     print("Decoding")
