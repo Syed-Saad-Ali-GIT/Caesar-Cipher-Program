@@ -60,45 +60,6 @@ def decode():
     incorrectInput = True
     print("Decoding \n")
 
-   #Loops until a only alphabetical texts are given
-    while(incorrectInput):
-        textToDecode = input("What will you like to Decode \n")
-        if(textToDecode.isalpha()):
-            incorrectInput=False
-        else:
-            print("Enter Only Alphabets , no numbers or special characters \n")
-
-
-    incorrectInput = True      
-
-    # loop until a proper shift key between 1-25 is given 
-    while(incorrectInput):
-        try:
-            keyShift = input("What is the key [1-25] ? \n")
-            if(int(keyShift) > 25 or int(keyShift) < 1):
-                print("Enter Between 1-25")
-            
-            else:
-                incorrectInput = False
-        except:
-            print("Something Went Wrong :( \n")
-
-    # Main algorithm for Caesar Shift Encoding
-    currentLetter = 0
-    for x in textToDecode:
-        
-        # Checks if shift will reset to "a" or not
-        # if it does it changes the keyshift accordingly
-        if(ord(x)-int(keyShift) > ord("a")):
-            keyShift = int(keyShift) +(ord("a")+ord(x)-1)
-            x = "a"
-
-        #Changes the text to the encoded message
-        textToDecode = textToDecode[:currentLetter] + (chr(ord(x)-int(keyShift))) + textToDecode[currentLetter+1:]
-        currentLetter +=1
-
-    # currently only printing to console     
-    print(textToDecode)
 
 
 
