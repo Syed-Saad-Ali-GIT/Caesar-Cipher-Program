@@ -57,7 +57,6 @@ def encode():
 # Function Respoinsible for decoding the encrpyted text
 # Load txt file and get decoded message printed onto console
 def decode(): 
-    incorrectInput = True
     print("Decoding \n")
 
 
