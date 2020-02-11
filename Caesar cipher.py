@@ -23,7 +23,6 @@ def encode():
 
 
     incorrectInput = True      
-
     # loop until a proper shift key between 1-25 is given 
     while(incorrectInput):
         try:
@@ -38,8 +37,9 @@ def encode():
 
     # Main algorithm for Caesar Shift Encoding
     currentLetter = 0
+    originalShift = int(keyShift)
     for x in textToEncode:
-        
+        keyShift = originalShift
         # Checks if shift will reset to "a" or not
         # if it does it changes the keyshift accordingly
         if(ord(x)+int(keyShift) > ord("z")):
