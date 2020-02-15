@@ -51,7 +51,15 @@ def encode():
         currentLetter += 1
 
     # currently only printing to console
-    print(textToEncode)
+    print(textToEncode + "\n")
+
+    #File Writting
+
+    print("Writting to file...")
+    f = open("Encoded_Message.txt", "w")
+    f.write("Encoded Message : \n")
+    f.write(textToEncode)
+    f.close()
 
 
 # Function Respoinsible for decoding the encrpyted text
