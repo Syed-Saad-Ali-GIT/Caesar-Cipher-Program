@@ -69,7 +69,7 @@ def decode():
 
     # Loops until a only alphabetical texts are given
     while(incorrectInput):
-        textToDecode = input("What will you like to Decode \n")
+        textToDecode = input("What is The Name Of the File with message \n")
         if(textToDecode.isalpha()):
             incorrectInput = False
         else:
@@ -105,8 +105,13 @@ def decode():
         currentLetter += 1
 
     # currently only printing to console
-    print(textToDecode)
+    print(textToDecode + "\n")
+    #File Writting
 
+    print("Writting to file...")
+    f = open("Decoded_Message.txt", "w")
+    f.write("Message : " + textToDecode)
+    f.close()
 
 # Basic Program load
 print("Welcome to Caesar Cipher Program \n")
