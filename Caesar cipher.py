@@ -57,7 +57,6 @@ def encode():
 
     print("Writting to file...")
     f = open("Encoded_Message.txt", "w")
-    f.write("Encoded Message : \n")
     f.write(textToEncode)
     f.close()
 
