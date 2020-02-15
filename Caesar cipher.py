@@ -82,7 +82,7 @@ def decode():
         except:
             print("Something Went Wrong :( \n")
 
-    # Main algorithm for Caesar Shift Encoding
+    # Main algorithm for Caesar Shift Decoding
     currentLetter = 0
     originalShift = int(keyShift)
     for x in textToDecode:
@@ -93,7 +93,7 @@ def decode():
             keyShift = (ord("a")-ord(x)-1) + int(keyShift)
             x = "z"
 
-        #Changes the text to the encoded message
+        #Changes the text to the decoded message
         textToDecode = textToDecode[:currentLetter] + (chr(ord(x)-int(keyShift))) + textToDecode[currentLetter+1:]
         currentLetter +=1
 
