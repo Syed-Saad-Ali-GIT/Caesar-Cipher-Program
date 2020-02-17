@@ -1,3 +1,4 @@
+import os.path
 
 textToEncode = ""
 
@@ -66,20 +67,24 @@ def encode():
 def decode():
     print("Decoding \n")
     incorrectInput = True
+    fileMissing = True
+    messageFile = ""
 
-    # Loops until a only alphabetical texts are given
-    while(incorrectInput):
-        textToDecode = input("What is The Name Of the File with message \n")
-        if(textToDecode.isalpha()):
-            incorrectInput = False
+
+    while(fileMissing):
+        fileName = input("Enter File Name with Message [.txt] \n")
+        if(os.path.isfile(fileName + ".txt")):
+            print("File Does Exist \n")
+            messageFile = open(fileName+".txt" , "w")
+            fileMissing = False
         else:
-            print("Enter Only Alphabets , no numbers or special characters \n")
+            print("File Missing \n") 
 
     incorrectInput = True
     # loop until a proper shift key between 1-25 is given
     while(incorrectInput):
         try:
-            keyShift = input("What do is the key? [1-25] \n")
+            keyShift = input("What is the key? [1-25] \n")
             if(int(keyShift) > 25 or int(keyShift) < 1):
                 print("Enter Between 1-25")
 
@@ -88,6 +93,16 @@ def decode():
         except:
             print("Something Went Wrong :( \n")
 
+
+    # Loops until a only alphabetical texts are given
+    while(incorrectInput):
+        textToDecode = messageFile.readline()
+        if(textToDecode.isalpha()):
+            incorrectInput = False
+        else:
+            print("Enter Only Alphabets , no numbers or special characters \n")
+
+    print(textToDecode)
     # Main algorithm for Caesar Shift Decoding
     currentLetter = 0
     originalShift = int(keyShift)
