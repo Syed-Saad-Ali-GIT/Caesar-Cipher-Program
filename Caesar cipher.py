@@ -69,6 +69,8 @@ def decode():
     incorrectInput = True
     fileMissing = True
     fileName = ""
+
+    #Loops Until user enters correct file with proper format
     while(incorrectInput):
         fileName = input("Enter File Name with Message [.txt] \n")
         while(fileMissing):
@@ -80,8 +82,11 @@ def decode():
        
         f = open(fileName+".txt" ,"r")
         textToDecode = f.readline()
+
+        #Checks if content is only alphabet
         if(textToDecode.isalpha()):
             incorrectInput = False
+            f.close()
         else: 
             print("Error in file content only alphabetical characters \n")
     
