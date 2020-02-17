@@ -68,25 +68,23 @@ def decode():
     print("Decoding \n")
     incorrectInput = True
     fileMissing = True
-
-
-    while(fileMissing):
-        fileName = input("Enter File Name with Message [.txt] \n")
-        if(os.path.isfile(fileName + ".txt")):
-            print("File Does Exist \n")
-            f = open(fileName+".txt" ,"r")
-            fileMissing = False
-        else:
-            print("File Missing \n") 
-
-    # Loops until a only alphabetical texts are given
+    fileName = ""
     while(incorrectInput):
-        textToDecode = input("What is The message to decode \n")
+        fileName = input("Enter File Name with Message [.txt] \n")
+        while(fileMissing):
+            if(os.path.isfile(fileName + ".txt")):
+                print("File Does Exist \n")
+                fileMissing = False
+            else:
+                print("File Missing \n") 
+       
+        f = open(fileName+".txt" ,"r")
+        textToDecode = f.readline()
         if(textToDecode.isalpha()):
             incorrectInput = False
-        else:
-            print("Enter Only Alphabets , no numbers or special characters \n")
-
+        else: 
+            print("Error in file content only alphabetical characters \n")
+    
     incorrectInput = True
     # loop until a proper shift key between 1-25 is given
     while(incorrectInput):
