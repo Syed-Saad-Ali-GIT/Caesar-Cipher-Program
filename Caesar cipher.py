@@ -1,7 +1,6 @@
 import os.path
 
 textToEncode = ""
-
 textToDecode = ""
 
 # Encoduing function
@@ -54,7 +53,7 @@ def encode():
     # currently only printing to console
     print(textToEncode + "\n")
 
-    #File Writting
+    # File Writting
 
     print("Writting to file...")
     f = open("Encoded_Message.txt", "w")
@@ -70,7 +69,7 @@ def decode():
     fileMissing = True
     fileName = ""
 
-    #Loops Until user enters correct file with proper format
+    # Loops Until user enters correct file with proper format
     while(incorrectInput):
         fileName = input("Enter File Name with Message [.txt] \n")
         while(fileMissing):
@@ -78,18 +77,18 @@ def decode():
                 print("File Does Exist \n")
                 fileMissing = False
             else:
-                print("File Missing \n") 
-       
-        f = open(fileName+".txt" ,"r")
+                print("File Missing \n")
+
+        f = open(fileName+".txt", "r")
         textToDecode = f.readline()
 
-        #Checks if content is only alphabet
+        # Checks if content is only alphabet
         if(textToDecode.isalpha()):
             incorrectInput = False
             f.close()
-        else: 
+        else:
             print("Error in file content only alphabetical characters \n")
-    
+
     incorrectInput = True
     # loop until a proper shift key between 1-25 is given
     while(incorrectInput):
@@ -121,12 +120,13 @@ def decode():
 
     # currently only printing to console
     print(textToDecode + "\n")
-    #File Writting
+    # File Writting
 
     print("Writting to file...")
     f = open("Decoded_Message.txt", "w")
     f.write("Message : " + textToDecode)
     f.close()
+
 
 # Basic Program load
 print("Welcome to Caesar Cipher Program \n")
