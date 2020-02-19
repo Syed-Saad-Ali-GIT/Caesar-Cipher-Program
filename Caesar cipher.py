@@ -1,3 +1,12 @@
+"""
+ * Copyright (C) 2020 Syed Saad Ali Syedsaadali034@gmail.com
+ * 
+ * This file is part of Saad's Caesar Shift Project.
+ * 
+ * Saad's Caesar Shift Project can not be copied and/or distributed without the express
+ * permission of Syed Saad Ali
+"""
+
 import os.path
 
 textToEncode = ""
