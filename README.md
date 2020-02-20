@@ -13,3 +13,23 @@ Implement a Caesar cipher, both encoding and decoding. The key is an integer fro
 3. Saves Encoded Message to file "Encoded_Message.txt"
 
 ## Decoding Function
+
+1. Enter file with correct formatt and message
+2. Enter key shift [1-25]
+3. Saves Decoded messafe to file "Decoded_Message.txt"
+
+## File Format For Decoding
+
+When using a personal file for decoding a message the following must be followed :
+- single line file with message
+- message only has characters (No space , no numbers or symbols)
+- The file is in .txt format
+
+## Future Plan 
+
+- MVC GUI
+- Allow more file types 
+- More Error handling
+- Better Algorithm
+- Newer encoding algorithms (RSA etc)
+
